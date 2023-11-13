@@ -2,7 +2,11 @@
   <div class="about">
     <div>
       <figure>
-        <img src="/img/me.png">
+        <img :src="`./img/me.png`">
+        <div>
+          <h2>박예린</h2>
+          <b>퍼블리셔 & 프론트 엔드</b>
+        </div>
         <figcaption>
           <b>전화번호</b>
           <p>
@@ -38,26 +42,26 @@
       <div class="con2">
         <h3>사용가능 툴</h3>
         <ul class="use">
-          <li v-for="(item2,k) in useTool" :key ="k">
-            <p><img :src="`/img/${item2.name}.png`" alt=""></p>
+          <li v-for="(item2, k) in useTool" :key="k">
+            <p><img :src="`./img/${item2.name}.png`" alt=""></p>
             {{ item2.text }}
           </li>
         </ul>
       </div>
     </div>
 
-    <nav>
-        <div class="more">
-          <ul class="more_sub">
-            <li v-for="item in popoldata" :key="item.num" @click ="scrollup">
-              <router-link :to="{ path: '/detail', query: { num: item.num } }">{{ item.name }}</router-link>
-            </li>
-            <li class="top" @click ="scrollup">▲ top </li>
-          </ul>
-          <button>more?</button>
-        </div>
-      </nav>
   </div>
+  <nav>
+    <div class="more">
+      <ul class="more_sub">
+        <li v-for="item in popoldata" :key="item.num" @click="scrollup">
+          <router-link :to="{ path: '/detail', query: { num: item.num } }">{{ item.name }}</router-link>
+        </li>
+        <li class="top" @click="scrollup">▲ top </li>
+      </ul>
+      <button>more?</button>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -71,7 +75,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['aboutMe','useTool','popoldata'])
+    ...mapState(['aboutMe', 'useTool', 'popoldata'])
   },
   methods: {
     addclass(k) {
@@ -86,8 +90,8 @@ export default {
       }
     },
 
-    scrollup(){
-      window.scrollTo({top:0,behavior:"smooth"})
+    scrollup() {
+      window.scrollTo({ top: 0, behavior: "smooth" })
     }
   },
   mounted() {
@@ -104,12 +108,12 @@ export default {
 
   >* {
     &:nth-child(1) {
-      flex: 1 0;
+      flex: 1;
       position: relative;
 
       >figure {
         position: sticky;
-        top: 10%;
+        top: 50%; transform: translateY(-65%);
         left: 0;
         height: 60vh;
         display: flex;
@@ -117,7 +121,7 @@ export default {
         justify-content: space-between;
 
         >img {
-          height: 50%;
+          height: 55%;
           object-fit: cover;
           border-radius: 50vw 50vw 0 0;
         }
@@ -131,9 +135,9 @@ export default {
     }
 
     &:nth-child(2) {
-      flex: 4 0;
+      flex: 4;
 
-      >*{
+      >* {
         margin-bottom: 10vh;
       }
     }
@@ -238,39 +242,44 @@ export default {
     }
   }
 
-  .con2{
-    >h3{
+  .con2 {
+    >h3 {
       margin-bottom: 4vh;
     }
-    .use{
+
+    .use {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-    >li{
-      width: 45%;
-      display: flex;
-      align-items: center;
-      margin-bottom: 2vh;
-      word-break: keep-all;
-      >p{
-        flex-shrink: 0;
-        width: 60px;
-        height:60px;
-        padding: 10px;
-        border: 1px solid #c0c0c0;
-        border-radius: 10px;
-        margin-right: 10px;
-        >img{
-          height: 100%;
-          object-fit: contain;
+
+      >li {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2vh;
+        word-break: keep-all;
+
+        >p {
+          flex-shrink: 0;
+          width: 60px;
+          height: 60px;
+          padding: 10px;
+          border: 1px solid #c0c0c0;
+          border-radius: 10px;
+          margin-right: 10px;
+
+          >img {
+            height: 100%;
+            object-fit: contain;
+          }
         }
       }
-    }
-    
+
     }
   }
 
-  .more {
+}
+.more {
   display: flex;
   align-items: end;
   flex-direction: column;
@@ -346,4 +355,5 @@ export default {
     0%{transform-origin: left center; transform: scaleX(0);}
     100%{transform-origin: left center; transform: scaleX(1);}
   }
-}</style>
+
+</style>

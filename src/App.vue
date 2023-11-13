@@ -1,14 +1,6 @@
 <template>
-  <nav ref="headerNav" class="header">
+  <nav ref="headerNav" :class="`header subHeader ${headerOn? 'on':''}`">
     <router-link to="/">Home</router-link>
-    <div>
-      <router-link :to="{ path: '/detail', query: { num: 1 } }">Work</router-link>
-      <ul class="sub">
-        <li v-for="item in popoldata" :key="item.num">
-          <router-link :to="{ path: '/detail', query: { num: item.num } }">{{ item.name }}</router-link>
-        </li>
-      </ul>
-    </div>
     <router-link to="/about">About</router-link>
   </nav>
   <router-view />
@@ -22,6 +14,8 @@ import { mapState } from 'vuex';
 export default {
   data() {
     return {
+      move : 0,
+      headerOn : false
     }
   },
   computed: {
@@ -31,10 +25,20 @@ export default {
     headerClick() {
       this.headerClickValue = this.$router.currentRoute._rawValue.name;
       console.log(this.headerClickValue)
+    },
+    moveHeader(){
+      if(window.scrollY < 150 || window.scrollY < this.move){
+        this.headerOn = true
+      }else if(window.scrollY > this.move){
+        this.headerOn = false
+      }
+      this.move = window.scrollY
     }
   },
   mounted() {
     this.headerClick();
+    this.moveHeader();
+    document.addEventListener('scroll',this.moveHeader.bind(this))
   }
 }
 </script>
@@ -71,6 +75,7 @@ h3 {
 }
 
 body {
+  position: relative;
   font-family: 'Noto Sans KR', sans-serif;
 
   img,
@@ -82,11 +87,11 @@ body {
     max-height: 30vh;
   }
 
-  --1size : 15px;
+  --1size : 16px;
   --2size : 20px;
-  --3size : 25px;
+  --3size : 26px;
   --4size : 30px;
-  --5size : 35px;
+  --5size : 36px;
 
   padding: 0 3vw;
 
@@ -186,5 +191,24 @@ nav {
     }
   }
 
+}
+.subHeader{
+  display: block;
+  text-align: end;
+  width: 100%;
+  padding: 2vw 0;
+  z-index: 1;
+  background-color: white;
+  position: sticky;
+  top: 0; right:calc(0% + 3vw) ;
+  transition: 0.3s;
+  transform: translateY(-100%);
+  &.on{
+    transform: translateY(0%)
+  }
+  @media (min-width: 1600px) {
+    width: 1500px;
+    right: calc(50% - 800px + 3vw)
+  }
 }
 </style>

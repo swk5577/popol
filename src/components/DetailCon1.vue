@@ -2,7 +2,7 @@
   <div class="con">
     <figure class="topfig">
       <hr>
-      <img :src="`/img/${detailData[0].img}.png`" />
+      <img :src="`./img/${detailData[0].img}.png`" />
       <hr>
     </figure>
 
@@ -44,7 +44,7 @@
         <h3>사용 프로그램</h3>
         <p>
           <span v-for="(item, k) in detailData[0].use" :key="k">
-            <img :src="`/img/${item}.png`">
+            <img :src="`./img/${item}.png`">
           </span>
         </p>
       </article>
@@ -52,7 +52,7 @@
       <article class="video">
         <h3>미리보기</h3>
         <p>
-          <video :src="`/video/${detailData[0].video}.mp4`" controls> 준비된 영상이 없습니다. </video>
+          <video :src="`./video/${detailData[0].video}.mp4`" controls> 준비된 영상이 없습니다. </video>
         </p>
       </article>
 

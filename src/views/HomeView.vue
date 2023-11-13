@@ -2,7 +2,7 @@
   <div class="home">
     <div>
       <figure class="profile">
-        <p><img src="/img/me.png" /></p>
+        <p><img :src="`./img/me.png`" /></p>
         <figcaption>
           <div>
             <h3>박예린</h3>
@@ -34,8 +34,8 @@
                 </p>
                 <router-link :to="{ path: '/detail', query: { num: item.num } }" class="more">MORE + </router-link>
               </figcaption>
-              <router-link :to="{ path: '/detail', query: { num: item.num } }" class="more">
-                <p><img :src="`/img/${item.img}.png`" /></p>
+              <router-link :to="{ path: '/detail', query: { num: item.num } }">
+                <p><img :src="`./img/${item.thum}.png`" /></p>
               </router-link>
             </figure>
           </swiper-slide>
@@ -92,12 +92,12 @@ export default {
     gap: 5vw;
 
     .profile {
-      flex: 1 0;
+      flex: 1;
 
       >p {
         border-radius: 50vw 50vw 0 0;
         width: 100%;
-        height: 30%;
+        height: 40%;
         overflow: hidden;
 
         img {
@@ -136,7 +136,7 @@ export default {
       position: relative;
       overflow: hidden;
       display: flex;
-      flex: 4 0;
+      flex: 4;
       height: 85vh;
 
       >p {
@@ -207,7 +207,7 @@ export default {
           }
 
           >img {
-            object-fit: contain;
+            object-fit: cover;
           }
         }
 

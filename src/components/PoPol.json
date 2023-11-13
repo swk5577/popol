@@ -2,6 +2,7 @@
     {
         "num": 1,
         "name": "꼬띠샵",
+        "thum":"thum_clone",
         "img" :"clone" ,
         "teyp": "개인",
         "time": "약4주",
@@ -43,7 +44,7 @@
             },
             {
                 "title": "팝콘",
-                "problem": " 순서대로 동작하고 동시에 꺼져야 하는 이미지가 각자 따로 애니메이션을 실행했다. <video src='/img/popcon.mp4' controls></video>",
+                "problem": "순서대로 동작하고 동시에 꺼져야 하는 이미지가 각자 따로 애니메이션을 실행했다. <video src='./img/popcon.mp4' controls></video>",
                 "solve": "JS로 클래스가 들어간 순간에만 작동하게 한뒤 딜레이를 주어 순차적으로 작동시키고 클래스를 모두 뺐다가 다시 클래스를 넣었다."
             }
         ]
@@ -51,6 +52,7 @@
     {
         "num": 2,
         "name": "서울 식물원",
+        "thum":"thum_seoul",
         "img" :"seoul" ,
         "teyp": "팀 (5인)",
         "time": "약4주",
@@ -105,6 +107,7 @@
     {
         "num": 3,
         "name": "오늘은 뭐해 먹지?",
+        "thum":"thum_food",
         "img" :"food" ,
         "teyp": "개인",
         "time": "약5주",
@@ -156,6 +159,7 @@
     {
         "num": 4,
         "name": "장 보는날",
+        "thum":"thum_togrocery",
         "img" :"togrocery" ,
         "teyp": "팀 (5인)",
         "time": "약2주",
@@ -212,14 +216,15 @@
     {
         "num": "5",
         "name": "자기소개 홈페이지",
+        "thum":"thum_myhome",
         "img" :"myhome" ,
         "teyp": "개인",
-        "time": "",
+        "time": "약3주",
         "Brief_description": "내가 만든, 제작에 참여한 홈페이지 포트폴리오와 자기소개서를 정리해 놓은 곳",
         "impression": "vue로 제작해 본 경험도 혹시 필요할지 싶어서 호기롭게 도전한 홈페이지로, 제작 도중 도중 약간 후회 중이다. 그래도 뭐 도전했으니 얼기설기 엮더라도 완성은 해보지! 싶어서 어떻게든 만들었다. 그나마 다행인 건 크게 어려 울만한 기능이 없는 홈페이지였다는 것 정도..? 아무리 비슷하다곤 해도 역시 다른 프로그램이라 별로 안 걸렸을 만한 기능도 엄청나게 오래 걸리고 말았지만, 해봤다는 것에 의의를 두고 싶다.",
         "main_function": "json을 이용한 데이터 뿌리기, 슬라이드",
-        "demo": "",
-        "git": "",
+        "demo": "https://swk5577.github.io/popol/",
+        "git": "https://github.com/swk5577/popol.git",
         "font": [
             "Noto Sans"
         ],
@@ -234,11 +239,10 @@
         ],
         "use": [
             "VUE",
-            "CSS",
             "SASS",
             "JSON"
         ],
-        "video": "",
+        "video": "myhome",
         "issue": [
             {
                 "title": "",
@@ -254,7 +258,8 @@
     },
     {
         "num": "6",
-        "name": "약",
+        "name": "약달력",
+        "thum":"thum_calendar",
         "img" :"" ,
         "teyp": "",
         "time": "",

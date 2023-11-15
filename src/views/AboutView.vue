@@ -113,7 +113,7 @@ export default {
 
       >figure {
         position: sticky;
-        top: 50%; transform: translateY(-65%);
+        top: 50%; transform: translateY(-6%);
         left: 0;
         height: 60vh;
         display: flex;
@@ -121,7 +121,7 @@ export default {
         justify-content: space-between;
 
         >img {
-          height: 55%;
+          height: 57%;
           object-fit: cover;
           border-radius: 50vw 50vw 0 0;
         }

@@ -113,7 +113,7 @@ export default {
 
       >figure {
         position: sticky;
-        top: 50%; transform: translateY(-6%);
+        top: 50%; transform: translateY(-50%);
         left: 0;
         height: 60vh;
         display: flex;

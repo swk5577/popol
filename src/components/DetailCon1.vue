@@ -1,6 +1,6 @@
 <template>
   <div class="con">
-    <figure class="topfig">
+    <figure :class="{'topfig':true, 'ing': detailData[0].time === '제작 중' }">
       <hr>
       <img :src="`./img/${detailData[0].img}.png`" />
       <hr>
@@ -123,6 +123,20 @@ export default {
     >img{
       height: 100%;
       object-fit: contain;
+    }
+    &.ing >img{
+      position: relative;
+      &::after{
+        content: '제작 중';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
     }
   }
 

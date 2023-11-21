@@ -166,7 +166,7 @@ export default {
       figure {
         figcaption {
           position: relative;
-          margin-bottom: 3vh;
+          margin-bottom: 5vh;
 
           >h2 {
             margin-bottom: 1%;
@@ -189,8 +189,7 @@ export default {
 
           .more {
             position: absolute;
-            ;
-            bottom: 0;
+            bottom: 0; transform: translateY(100%);
             right: 0;
             color: #6253A4;
             font-weight: bold;

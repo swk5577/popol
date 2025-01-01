@@ -208,7 +208,7 @@
     {
         "num": "6",
         "name": "ABoHa (아보하)",
-        "thum":"aboha",
+        "thum":"thum-aboha",
         "img" :"aboha" ,
         "teyp": "팀 (3인)",
         "time": "약 1달",
@@ -230,11 +230,10 @@
             "최소사이즈 : Title3"
         ],
         "use": [
-            "xCode",
+            "XCode",
             "IOS",
             "Azure",
-            "JavaScript",
-            "npm",
+            "JS",
             "DBeaver"
         ],
         "video": "aboha",
